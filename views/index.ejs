@@ -1,0 +1,35 @@
+<div class="author">
+  <h1 class="author__heading">Hi, I'm Salim Abdikadir</h1>
+  <p class="author__body">This is the body of the upper header</p>
+</div>
+
+<img
+  src="/img/sample1.jpg"
+  class="hero_img"
+  alt="forest"
+  width="982"
+  height="526"
+/>
+
+<section class="articles">
+  <h2 class="articles__heading">Latest posts</h2>
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+
+    <li>
+      <a href="/post/<%= post._id %>">
+        <span><%= post.title %></span>
+        <span class="article-list__date"
+          ><%= post.createdAt.toDateString() %></span
+        >
+      </a>
+    </li>
+
+    <% }) %>
+  </ul>
+  <% if (nextPage !== null) { %>
+  <a href="/?page=<%= nextPage %>" class="pagination">
+    &lt; click to see more</a
+  >
+  <% } %>
+</section>

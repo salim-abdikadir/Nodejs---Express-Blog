@@ -1,0 +1,20 @@
+<section class="articles">
+  <h2 class="articles__heading">
+    <% if (data.length == 0) { %> There is 0 results <% } else { %> There are
+    <%= data.length %> results <%} %>
+  </h2>
+  <ul class="article-ul">
+    <% data.forEach(post => { %>
+
+    <li>
+      <a href="/post/<%= post._id %>">
+        <span><%= post.title %></span>
+        <span class="article-list__date"
+          ><%= post.createdAt.toDateString() %></span
+        >
+      </a>
+    </li>
+
+    <% }) %>
+  </ul>
+</section>
